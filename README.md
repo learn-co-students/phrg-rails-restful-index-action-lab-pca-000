@@ -51,6 +51,4 @@ be found in `spec/features`, both tests should be passing to complete the lab.
 
 [Rails Routing from the Outside In](http://edgeguides.rubyonrails.org/routing.html)
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-restful-index-action-lab' title='RESTful Index Action Lab'>RESTful Index Action Lab</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-restful-index-action-lab'>RESTful Action Index Lab</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>PHRG RESTful Index Action Lab</p>

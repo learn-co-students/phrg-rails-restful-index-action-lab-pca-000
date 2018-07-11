@@ -148,3 +148,106 @@ Migrating to CreateStudents (1)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Morty"], ["last_name", "Smith"], ["created_at", "2017-11-28 15:01:02.845645"], ["updated_at", "2017-11-28 15:01:02.845645"]]
   [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Rick"], ["last_name", "Sanchez"], ["created_at", "2018-07-11 15:40:26.898292"], ["updated_at", "2018-07-11 15:40:26.898292"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["first_name", "Morty"], ["last_name", "Smith"], ["created_at", "2018-07-11 15:40:26.907204"], ["updated_at", "2018-07-11 15:40:26.907204"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT "students".* FROM "students"[0m
+
+
+Started GET "/" for ::1 at 2018-07-11 11:50:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:50:13 -0400
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 342ms (Views: 341.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-07-11 11:50:13 -0400
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:50:27 -0400
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:54:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/katieweber/learnco_labs/rails-labs/phrg-rails-restful-index-action-lab-pca-000/app/views/students/index.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/students/index.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.5ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:55:30 -0400
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/katieweber/learnco_labs/rails-labs/phrg-rails-restful-index-action-lab-pca-000/app/views/students/index.html.erb:4: syntax error, unexpected keyword_end, expecting end-of-input
+ end 
+    ^):
+  app/views/students/index.html.erb:4: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.3ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:55:45 -0400
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/katieweber/learnco_labs/rails-labs/phrg-rails-restful-index-action-lab-pca-000/app/views/students/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/students/index.html.erb:6: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.8ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:57:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/katieweber/learnco_labs/rails-labs/phrg-rails-restful-index-action-lab-pca-000/app/views/students/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/students/index.html.erb:7: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/katieweber/.rvm/gems/ruby-2.3.7/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+
+
+Started GET "/students" for ::1 at 2018-07-11 11:57:36 -0400
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 213ms (Views: 211.9ms | ActiveRecord: 0.4ms)
